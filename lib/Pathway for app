@@ -1,0 +1,168 @@
+1. Splash Screen  ( Completed )
+2. Homepage       ( Ongoing )
+3. Profile        ( Completed )
+4. Settings
+5. Lobby
+6. Team Selection 
+7. Team Overview Page
+8. Auction Page
+9. Summary 
+
+
+
+
+1️⃣ Splash Screen
+
+    Purpose: Branding + initial animation.
+
+    Content:
+
+        Animated logo and app name.
+
+        Navigate to HomePage after 4–5 seconds.
+
+    Widgets/Features:
+
+        AnimatedBuilder + Transform for floating logo.
+
+        Gradient background.
+
+----------------------------------------------------------------------------
+
+2️⃣ Home Page / Lobby Entry
+
+    Purpose: Start or join a multiplayer auction.
+
+    Content:
+
+        Buttons:
+
+        Create Room → generates new auction room in Firebase.
+
+        Join Room → input room code to join.
+
+        List of available rooms (optional).
+
+    Widgets/Features:
+
+        TextField for room code input.
+
+        ListView for showing current rooms.
+
+        Navigate to Lobby Page.
+
+----------------------------------------------------------------------------
+
+3️⃣ Lobby Page
+
+    Purpose: Wait for all players to join.
+
+    Content:
+
+        Show connected players (from Firebase).
+
+        “Ready” button to start auction.
+
+    Widgets/Features:
+
+        StreamBuilder to listen to rooms/{roomId}/players.
+
+        Highlight ready/not-ready status.
+
+        Start button triggers auction → navigate to Auction Page.
+
+----------------------------------------------------------------------------
+
+4️⃣ Team Selection Page (Optional)
+
+    Purpose: Choose IPL team before auction.
+
+    Content:
+
+        Grid of IPL teams with logos.
+
+        Highlight selected team.
+
+        Confirm button.
+
+    Widgets/Features:
+
+        GridView.builder for teams.
+
+        Store selection in Firebase: rooms/{roomId}/players/{userId}/team.
+
+----------------------------------------------------------------------------
+
+5️⃣ Auction Page
+
+    Purpose: Real-time bidding for players.
+
+    Content:
+
+        Current player card (photo + stats).
+
+        Highest bid and bidder info.
+
+        Bid buttons (+10, +50, or input).
+
+        Countdown timer for current auction.
+
+        User team budget bar.
+
+    Widgets/Features:
+
+        StreamBuilder on rooms/{roomId}/highestBid.
+
+        Bid actions update Firebase.
+
+        Timer synced via DB (endTime).
+
+        On auction end → assign player to winning bidder → update team in DB.
+
+----------------------------------------------------------------------------
+
+6️⃣ Team Overview Page
+
+    Purpose: Show each user’s team after each round.
+
+    Content:
+
+        List/Grid of players assigned to team.
+
+        Budget remaining.
+
+        Stats summary.
+
+    Widgets/Features:
+
+        StreamBuilder on rooms/{roomId}/teams/{userId}.
+
+        Continue button → next auction round.
+
+----------------------------------------------------------------------------
+
+8️⃣ Result / Summary Page
+
+    Purpose: Show final auction results.
+
+    Content:
+
+        Full team list for all players.
+
+        Stats / leaderboard.
+
+        Restart auction or exit button.
+
+    Widgets/Features:
+
+        Grid/List of teams & players.
+
+        Navigate back to HomePage to start new game.
+
+
+
+
+
+last prompt :
+
+i needs auction , teamoverview , summary , teamselection page like prev my code write appwrie codes for this and make logic like there is no timing needs to go from beginning once twice sold is ok but in begining make give ctrl to host to skip playerrs based on all person options

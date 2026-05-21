@@ -1,0 +1,3 @@
+player_id,name,role,base_price,avg_score,is_foreign,country,previous_team,image_url,batting_style,bowling_style,available,is_sold,sold_to_team,sold_price,notes
+P001,Virat Kohli,Batsman,2000,58,false,India,RCB,https://example.com/images/virat.png,Right-hand,,true,false,,,
+P002,Jasprit Bumrah,Bowler,1800,22,false,India,MI,https://example.com/images/bumrah.png,,Right-arm fast,true,false,,,
